@@ -7,12 +7,16 @@ class DevicesController < ApplicationController
     else
       render json: { error: 'failed to create device' }, status: :not_acceptable
     end
+  end
 
+  def index
+    @devices = Device.all
+    render json: @devices
   end
 
 private
 
   def device_params
-    params.require(:user).permit(:name, :commands => [])
+    params.require(:device).permit(:name, :commands => [])
   end
 end
