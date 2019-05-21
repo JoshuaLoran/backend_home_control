@@ -36,6 +36,7 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   config.action_cable.url = 'wss://agile-reef-99245.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = [ 'https://agile-reef-99245.herokuapp.com', 'http://action-cable-example.herokuapp.com']
+  config.action_dispatch.tld_length = 2 # Defaults to 1
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
