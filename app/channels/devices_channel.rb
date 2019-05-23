@@ -11,7 +11,7 @@ class DevicesChannel < ApplicationCable::Channel
   def receive(data)
     device = Device.find(data["id"])
     device.update!(commands: data["commands"])
-    ActionCable.server.broadcast('devices', data)
+    ActionCable.server.broadcast('devices', data )
   end
-  
+
 end
