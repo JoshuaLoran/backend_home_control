@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   resources :devices
   resources :users_devices, only: [:create]
+  post '/userdevice', to: 'users_devices#create'
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
   mount ActionCable.server => '/cable'
