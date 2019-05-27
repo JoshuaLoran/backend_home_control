@@ -9,7 +9,7 @@ class UsersDevicesController < ApplicationController
     end
 
   end
-
+ 
 private
 
   def users_device_params

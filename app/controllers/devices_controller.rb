@@ -9,6 +9,11 @@ class DevicesController < ApplicationController
     end
   end
 
+  def destroy
+    @device = Device.find_by(id: device_params[:id])
+    @device.destroy
+  end
+
   def index
     @devices = Device.all
     render json: @devices
@@ -17,6 +22,6 @@ class DevicesController < ApplicationController
 private
 
   def device_params
-    params.require(:device).permit(:name, :commands => [])
+    params.require(:device).permit(:id, :name, :commands => [])
   end
 end
